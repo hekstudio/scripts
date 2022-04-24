@@ -1,6 +1,9 @@
 #!/bin/bash
 # reference: https://hub.docker.com/r/clickhouse/clickhouse-server/
 
+# pull mysql image
+docker pull clickhouse/clickhouse-server
+
 docker run \
 -d \
 --restart=unless-stopped \
