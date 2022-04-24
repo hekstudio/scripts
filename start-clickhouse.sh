@@ -1,3 +1,4 @@
+#!/bin/bash
 # reference: https://hub.docker.com/r/clickhouse/clickhouse-server/
 
 docker run \
