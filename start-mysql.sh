@@ -6,6 +6,7 @@ docker pull mysql:latest
 # run docker
 docker run \
 -d \
+-restart=unless-stopped \
 --name=db_test \
 -v /storage/test-mysql/datadir:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=123456 \
