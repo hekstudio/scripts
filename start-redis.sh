@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# var
-NAME='' # redis docker name
-HOST='' # host name
-PORT=''
-PASS='' # password
-
+# var with default values
+NAME="Redis" # redis docker name
+HOST="Redis" # host name
+PORT="6379"  # port
+PASS="12345" # password
 
 function help() {
     echo "
@@ -20,27 +19,27 @@ function help() {
 function parse_args() {
     while getopts ":h:p:w:n:" opt; do
         case $opt in
-            n)
-                NAME=${OPTARG}
-                echo "NAME: ${NAME}"
-                ;;
-            h)
-                HOST=${OPTARG}
-                echo "HOST: ${HOST}"
-                ;;
-            p)
-                PORT=${OPTARG}
-                echo "PORT: ${PORT}"
-                ;;
-            w)
-                PASS=${OPTARG}
-                echo "PASS: ${PASS}"
-                ;;
-            ?)
-                echo "unregistered argument"
-                help
-                exit
-                ;;
+        n)
+            NAME=${OPTARG}
+            echo "NAME: ${NAME}"
+            ;;
+        h)
+            HOST=${OPTARG}
+            echo "HOST: ${HOST}"
+            ;;
+        p)
+            PORT=${OPTARG}
+            echo "PORT: ${PORT}"
+            ;;
+        w)
+            PASS=${OPTARG}
+            echo "PASS: ${PASS}"
+            ;;
+        ?)
+            echo "unregistered argument"
+            help
+            exit
+            ;;
         esac
     done
 }
